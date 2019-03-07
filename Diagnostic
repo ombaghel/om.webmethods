@@ -1,0 +1,1 @@
+To get diagnostic data paste /invoke/wm.server.admin/getDiagnosticData on URL beside host and port and hit Enter.
