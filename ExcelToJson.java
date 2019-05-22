@@ -9,7 +9,7 @@ public static final void excelToJson(IData pipeline) throws ServiceException {
 		}
 		
 		try {
-			IDataUtil.put( pipelineCursor, "output", getTableData(new XSSFWorkbook(is)).toString() );
+			IDataUtil.put( pipelineCursor, "output", getSheetData(new XSSFWorkbook(is)).toString() );
 		} catch ( Exception e) {
 			// TODO Auto-generated catch block
 			throw new ServiceException(e);
@@ -19,7 +19,7 @@ public static final void excelToJson(IData pipeline) throws ServiceException {
 			
 	}
 
-public static  JSONObject getTableHeader(XSSFWorkbook wb ) throws  Exception{
+public static  JSONObject getWorkBookHeaders(XSSFWorkbook wb ) throws  Exception{
 	    JSONObject obj=new JSONObject();
 	    JSONArray array=new JSONArray();
 	    int SheetSum = wb.getNumberOfSheets();
@@ -39,10 +39,10 @@ public static  JSONObject getTableHeader(XSSFWorkbook wb ) throws  Exception{
 	   return obj;
 	}
 	
-	public static  JSONArray getTableData(XSSFWorkbook wb ) throws Exception{
+	public static  JSONArray getSheetData(XSSFWorkbook wb ) throws Exception{
 		 SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 	
-	    JSONObject table = getTableHeader( wb);
+	    JSONObject table = getWorkBookHeaders( wb);
 	    System.out.println("tables "+table);
 		XSSFSheet sheet = wb.getSheetAt(0);
 		
