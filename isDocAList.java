@@ -1,7 +1,8 @@
-// documentList
+		// documentList
 		IData[]	documentList = IDataUtil.getIDataArray( pipelineCursor, "inputDoc" );
 		if ( documentList != null) {
-			isList="true";		}
+			isList="true";		
+		}
 		
 		// pipeline
 		IDataUtil.put( pipelineCursor, "isList", isList );
