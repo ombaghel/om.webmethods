@@ -1,13 +1,13 @@
- 				  IData[] aryData = IDataUtil.getIDataArray(cursorIn, "inputList");
-					IData outputDoc = IDataFactory.create();
-					IDataCursor outputDocCursor = outputDoc.getCursor();
+ 		 IData[] aryData = IDataUtil.getIDataArray(cursorIn, "inputList");
+		 IData outputDoc = IDataFactory.create();
+		 IDataCursor outputDocCursor = outputDoc.getCursor();
 					
 		        for (int i = 0; i < aryData.length; i++) {
 		        	  
 		        	  String pKey=null;
 		        	  String[] pValue=null;
 		      		IDataCursor idc = aryData[i].getCursor();
-		      		while (idc.next())
+		      	 while (idc.next())
 		      	  {
 		      		  String key = idc.getKey();
 		              if(key.contains("key"))
@@ -22,11 +22,9 @@
 		              }
 		      	  }
 		              
-			            IDataUtil.put(outputDocCursor, pKey, pValue);
+			   IDataUtil.put(outputDocCursor, pKey, pValue);
 		
-			            idc.destroy();         
+			 idc.destroy();         
 		
-						
-					}
-       IDataUtil.put(cursorIn, "output", outputDoc);
+	            }
 		
