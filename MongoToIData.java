@@ -1,4 +1,4 @@
-##Reading Mongo to webMethods IS as webMethods Idata Docuemnt 
+##Reading Mongo to webMethods IS as webMethods Idata Documemnt 
 
      MongoDatabase db2 = mongoClient.getDatabase(databaseName);
 		 MongoCollection<Document> coll2 = db2.getCollection(collectionName);
